@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+     <servlet>
+        <servlet-name>LogOff</servlet-name>
+        <servlet-class>LogOff</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOff</servlet-name>
+        <url-pattern>/LogOff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+    <security-constraint>
+        <display-name>Open Resources</display-name>
+        <web-resource-collection>
+            <web-resource-name>WRCollection</web-resource-name>
+            <url-pattern>/js/*</url-pattern>
+            <url-pattern>/lib/*</url-pattern>
+            <url-pattern>/about.jsp</url-pattern>
+            <url-pattern>/error.jsp</url-pattern>
+        </web-resource-collection>
+        <!-- no auth-constraint tag here -->
+    </security-constraint>
+
+    <security-constraint>
+        <display-name>SecurityConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>WRCollection</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Customer</role-name>
+            <role-name>Administrator</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/logon.jsp</form-login-page>
+            <form-error-page>/logonError.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <security-role>
+        <role-name>Customer</role-name>
+    </security-role>    
+    <security-role>
+        <role-name>Administrator</role-name>
+    </security-role>    
+    
+    <!--
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    -->
+    
+
+</web-app>

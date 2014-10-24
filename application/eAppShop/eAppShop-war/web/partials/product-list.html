@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+            <i class="fa fa-search" >
+                <input type="text" id="productFilter" name="productFilter" placeholder="Enter product name or id" ng-model="search">
+            </i>
+            <input ng-show="productsInCart>0" type="button" value="Proceed to Check Out" class="btn btn-primary pull-right" onclick="location.href='#/cart';"/>
+        </div>
+        <div class="col-md-10">
+            <!--Body content-->
+
+            <ul class="products">
+                <li ng-repeat="product in products| filter:search"
+                    class="thumbnail product-listing"  ng-class="{'product-in-cart': product.cart > 0 && !product.isOutOfStock, 'out-of-stock-product': product.isOutOfStock}">
+                    <a href="#/product/{{product.productid}}" class="thumb"><img ng-src="{{product.imageurl}}"></a>
+                    <a href="#/product/{{product.productid}}">{{product.description}}</a>
+                    <i class="fa fa-times" ng-click="removeProduct(product)" data-access-level="admin"></i>   
+                    <i class="fa fa-shopping-cart" ng-click="updateQtyInCart(product, 1)" ng-hide="product.isOutOfStock" ></i>
+                    <div ng-show="product.cart > 0">
+                        <p>In Cart: {{product.cart}}</p>
+                        <i class="fa fa-plus-square" ng-click="updateQtyInCart(product, 1)" ng-hide="product.isOutOfStock"></i>
+                        <i class="fa fa-minus-square" ng-click="updateQtyInCart(product, -1)" ng-hide="product.isOutOfStock"></i>
+                        <i class="fa fa-ban" ng-click="removeProductFromCart(product)" ng-show="product.isOutOfStock"></i>
+                    </div>
+                    <p ng-class="{'out-of-stock-product-qty': product.isOutOfStock}">Quantity: {{product.isOutOfStock? product.qty : product.qty - product.cart}}</p>
+                    <div data-access-level="admin">
+                        <i class="fa fa-plus-square" ng-click="incQty(product)"></i>
+                        <i class="fa fa-minus-square" ng-click="decQty(product)"></i>
+                    </div>
+                    <p data-access-level="user">Price per item: {{product.price| currency:'€'}}</p> 
+                    <p data-access-level="admin">Price per item: <input type="number" ng-model="product.price" size="7" ng-change="updateProduct(product)"></p> 
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-10" data-access-level="admin">
+            <form name="productform" class="new-product-form">
+                <textarea required ng-model="product.description" class="form-control product-description" placeholder="Write a short description of the product..." title="Description"></textarea>
+                <p>Quantity: <input type="number" ng-model="product.qty" required></p>
+                <p>Price per item: <input type="number" ng-model="product.price" required></p>
+                <p><button class="btn btn-primary pull-left" ng-click="addProduct(product)">Create</button></p>
+            </form>
+        </div>
+    </div>
+</div>

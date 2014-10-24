@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/error.jsp</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/controllers.js</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/partials/product-list.html</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/tags/angular/scripts.tag</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/tags/app/styles.tag</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/app.js</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/partials/product-detail.html</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/animations.js</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/filters.js</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/CartServlet.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/index.jsp</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/logon.jsp</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/logonError.jsp</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/LogOff.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/tags/app/navbar.tag</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/partials/cart-list.html</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/services.js</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/lib/app.css</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/webServices/ProductResource.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/tags/bootstrap/scripts.tag</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/beans.xml</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/webServices/CommentResource.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/WEB-INF/tags/bootstrap/styles.tag</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/webServices/UserResource.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/src/java/webServices/ApplicationConfig.java</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/nbproject/build-impl.xml</file>
+            <file>file:/C:/Work/UL/src/application/eAppShop/eAppShop-war/web/js/directives.js</file>
+        </group>
+    </open-files>
+</project-private>

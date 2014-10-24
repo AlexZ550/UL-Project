@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+                <i class="fa fa-search" >
+                    <input type="text" id="productFilter" name="productFilter" placeholder="Enter product name or id" ng-model="search">
+                </i>
+    </div>
+    <div class="col-md-10"  ng-show="products.length> 0">
+      <!--Body content-->
+
+      <ul class="products">
+        <li ng-repeat="product in products | filter:search"
+            class="thumbnail product-listing" ng-class="{'out-of-stock-product': product.isOutOfStock}">
+            <a href="#/product/{{product.productid}}" class="thumb"><img ng-src="{{product.imageurl}}"></a>
+            <a href="#/product/{{product.productid}}">{{product.description}}</a>                    
+            <p ng-class="{'out-of-stock-product-qty': product.isOutOfStock}">Quantity: {{product.qty}}</p>
+            <p ng-class="{'out-of-stock-product-qty': product.isOutOfStock}" ng-show="product.isOutOfStock">Available: {{product.availableQty}}
+                <input type="button" class="btn btn-primary pull-right" value="Adjust Quantity" ng-click="adjustQty(product)" ng-show="product.availableQty > 0"/>            
+                <input type="button" class="btn btn-primary pull-right" value="Remove" ng-click="removeFromCart(product)" ng-hide="product.availableQty > 0"/>            
+            </p>
+            
+            <p>Price per item: {{product.price | currency:'€'}}</p>
+            <i></i>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-10" ng-hide="products.length> 0 || isCheckedOut">
+        <h4>Shopping cart is empty</h4>
+        <p>Please click here to return to <a href="index.jsp" onclick="$('#home-link').trigger('click');"> <em>Product list</em></a></p>        
+    </div>
+    <div class="col-md-10" ng-show="isCheckedOut">
+        <h4>Your order is placed successfully</h4>
+        <p>Please click here to return to <a href="index.jsp" onclick="$('#home-link').trigger('click');"> <em>Product list</em></a></p>        
+    </div>
+    <div class="col-md-10" ng-show="products.length> 0">
+      <p><input type="button" class="btn btn-primary pull-left" value="Check Out" ng-click="checkOutCart()"/></p>
+      <p><input type="button" class="btn btn-primary pull-left" value="Cancel" ng-click="cancelCart()"/></p>
+    </div>
+  </div>
+</div>

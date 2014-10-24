@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div>
+    <div class="product-details">
+      <!--Sidebar content-->
+            <a href="#/product/{{product.productid}}" class="thumb"><img ng-src="{{product.imageurl}}"></a>
+            <a href="#/product/{{product.productid}}">{{product.description}}</a>                    
+            <p>Quantity: {{product.qty}}</p>
+            <p>Price per item: {{product.price | currency:'€'}}</p>
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <!--<ul class="products">
+        <li ng-repeat="comment in comments" class="thumbnail product-listing">
+            {{comment.text}}
+            <p>Commented by {{comment.userid.name}}</p>
+        </li>
+      </ul>--->
+
+           <h4>Comments</h4>
+           <ul class="comments">
+              <li ng-repeat="comment in comments | orderBy: 'commentId' ">
+                <blockquote>
+                  {{comment.text}}
+                  <cite class="clearfix">—{{comment.userid.name}}</cite>
+                </blockquote>
+              </li>
+            </ul>
+
+            <blockquote >
+              {{review.text}}
+            </blockquote>
+           
+           <div>
+                <textarea ng-model="review.text" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+                <p><input type="button" class="btn btn-primary pull-left" value="Submit Comment" ng-click="addComment(review)"/></p>
+           </div>
+    </div>
+  </div>
+</div>
+
